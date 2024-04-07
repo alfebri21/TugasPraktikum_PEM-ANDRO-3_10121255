@@ -1,76 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="24dp"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/edit_firstname"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/edt_calculatetip"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:layout_marginStart="@dimen/dimen_12dp"
-        android:layout_marginTop="@dimen/dimen_12dp"
-        android:text="@string/first_name"
-        app:layout_constraintEnd_toStartOf="@+id/edit_lastname"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="184dp"
+        android:text="@string/calculate_tip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_lastname"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:layout_marginEnd="@dimen/dimen_12dp"
-        android:layout_marginTop="@dimen/dimen_12dp"
-        android:text="@string/last_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/edit_firstname"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/edit_birthdate"
+        android:id="@+id/edt_billamount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
         android:ems="10"
-        android:inputType="text"
-        android:layout_marginTop="@dimen/dimen_12dp"
-        android:layout_marginStart="@dimen/dimen_12dp"
-        android:layout_marginEnd="@dimen/dimen_12dp"
-        android:text="@string/birth_date"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="35dp" />
+        android:hint="@string/bill_amount"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_calculatetip" />
 
     <EditText
-        android:id="@+id/edit_country"
-        android:layout_width="0dp"
+        android:id="@+id/edt_tippercantage"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_12dp"
-        android:layout_marginStart="@dimen/dimen_12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
         android:ems="10"
-        android:inputType="text"
-        android:text="@string/country"
-        app:layout_constraintEnd_toStartOf="@+id/apply"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_firstname" />
-
-    <Button
-        android:id="@+id/apply"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_12dp"
-        android:layout_marginEnd="@dimen/dimen_12dp"
-        android:text="@string/apply"
+        android:hint="@string/how_was_the_service"
+        android:inputType="number"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/edit_country"
-        tools:layout_editor_absoluteY="80dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_billamount" />
+
+    <Switch
+        android:id="@+id/swt_roundtip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:minHeight="48dp"
+        android:text="@string/round_up_tip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/edt_tippercantage"
+        app:layout_constraintTop_toBottomOf="@+id/edt_tippercantage" />
+
+    <TextView
+        android:id="@+id/edt_tipamount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="12dp"
+        android:textSize="42dp"
+        android:text="@string/tip_amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swt_roundtip" />
 </androidx.constraintlayout.widget.ConstraintLayout>
